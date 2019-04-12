@@ -1,0 +1,54 @@
+ <div class="contents-row">
+  <% @tweets.each do |tweet| %>
+    <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+      <% if user_signed_in? && current_user.id == tweet.user_id %>
+        <div class="more">
+
+          <ul class="more_list">
+
+
+
+
+          <!-- 編集ボタン -->
+            <li>
+              <%= link_to "/tweets/#{tweet.id}/edit", method: :get, class: "btn-floating pink darken-1 btn-large" do %>
+              <i class = "large material-icons">mode_edit</i>
+               <%end%>
+            </li>
+          <!-- 削除ボタン -->
+            <li>
+              <%= link_to "/tweets/#{tweet.id}", method: :delete, class: "btn-floating purple darken-2 btn-large" do %>
+               <i class = "large material-icons">delete_sweep</i>
+              <%end%>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+        <%= simple_format(tweet.text) %>
+      <span class="name">
+        <a href="">
+          <span>投稿者</span><%= tweet.user.nickname %>
+        </a>
+      </span>
+    </div>
+  <% end %>
+    <div class = "wave-cantainer">
+      <!-- TAP TARGET -->
+      <div class="fixed-action-btn" style="bottom:45px;right:24px">
+        <a id ="menu" onclick="$('.tap-target').tapTarget('open')" class= "waves-effect waves-light btn btn-floating btn-large pink darken-1">
+          <i class = "material-icons">menu</i>
+        </a>
+      </div>
+      <!-- TAP TARGET CONTENT -->
+      <div class= "tap-target pink darken-1" data-activates="menu">
+        <div class="tap-target-content white-text">
+          <h5>ARE U READY FOR FUJIROCK?!</h5>
+          <p class="white-text">The most beautiful music fest held this Summer!!  Are u ready for Summer? ready for FUJIROCK? start from the yellow btn!! </p>
+        </div>
+      </div>
+    </div>
+
+
+
+  <%= paginate(@tweets) %>
+</div>

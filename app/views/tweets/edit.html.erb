@@ -1,0 +1,17 @@
+  <div class="contents-edit">
+    <%= form_tag("/tweets/#{@tweet.id}", method: :patch ) do %>
+      <h3 class = "edit">
+        EDIT
+      </h3>
+      <input placeholder="Image Url" type="text" name="image" value="<%= @tweet.image %>" autofocus="true">
+      <textarea cols="30" name="text" placeholder="text" rows="10"><%= @tweet.text %></textarea>
+
+　　　<button class = "btn-large yellow accent-2 black-text" type="submit" value="butoon clicked!!">SENT!</button>
+
+
+
+
+    <% end %>
+
+
+  </div>
