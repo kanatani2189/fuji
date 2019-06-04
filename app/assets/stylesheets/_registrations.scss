@@ -1,0 +1,39 @@
+
+.driver{
+  background-color: #f8bbd0;
+  color: #1565c0;
+
+}
+
+.info{
+  width: 1020px;
+  margin: 0 auto;
+
+  &-film{
+    height:200px;
+    h2{
+      margin: 0;
+      padding-top: 30px;
+    }
+  }
+
+}
+
+.field, .action{
+  width: 800px;
+  margin: 0 auto;  
+  label{
+    font-size: 20px;
+    color: #01579b  ;
+  } 
+ 
+}
+
+.new_driver{
+  color: #1565c0 !important;
+}
+
+input{
+  border-bottom: 3px solid #18ffff !important;
+  
+}

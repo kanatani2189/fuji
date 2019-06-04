@@ -41,6 +41,7 @@
           <div class="nav-wrapper">
             <a href="/" class="brand-logo">FUJIROCK</a>
 
+
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <% if user_signed_in? %>
 
@@ -62,6 +63,13 @@
                 <li><%= link_to "ログイン", new_user_session_path, class: 'post' %></li>
                 <li><%= link_to "新規登録", new_user_registration_path, class: 'post' %></li>
 
+              <% end %>
+              <% unless driver_signed_in? %>
+                <li>
+                  <%= link_to "/drivers/sign_up", method: :get, class: "waves-effect light-blue darken-1 waves-light btn-large" do %>
+                    <i class="material-icons right">drive_eta</i>GET ON</a>
+                  <%end%>
+                </li>
               <% end %>
 
             </ul>

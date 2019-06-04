@@ -1,0 +1,35 @@
+.drivers-info{
+  h2{
+    color: #3f51b5;
+    font-weight: bold;
+  }
+  video{
+    width: 100%;
+    height: 800px;
+    position: fixed;
+    top: 0; /* ADD */
+    z-index: -100;
+  }
+  &-row, .check-boxes{
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #1565c0 !important;
+  }
+
+}
+
+textarea{
+  border-bottom: 3px solid #18ffff !important; 
+}
+
+
+span{
+  color: blue;
+}
+
+.question{
+  color: blue;
+}
+
+

@@ -1,0 +1,68 @@
+<div class = "driver">
+  <div class = "info">
+    <div class = "info-film">  
+      <h2>lets'go.Bring everyone to
+      </br>heaven with your handle.</h2>
+    </div>
+  </div>
+
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+        <%= f.label :email %><br />
+        <i class="material-icons prefix">email</i>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", color: 'field_color'%>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+
+      <% if @minimum_password_length %>
+      <i class="material-icons prefix">lock</i>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :licence_number%><br />
+      <i class="material-icons prefix">drive_eta</i>
+      <%= f.text_field :licence_number, autofocus: true, autocomplete: "licence_number" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :licence_valid_from%><br />
+      <%= f.text_field :licence_valid_from, autofocus: true, autocomplete: "licence_valid_from" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :contact_number%><br />
+      <i class="material-icons prefix">phone</i>
+      <%= f.text_field :contact_number, autofocus: true, autocomplete: "contact_number" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :adress%><br />
+            <i class="material-icons prefix">edit_location</i>
+      <%= f.text_field :adress, autofocus: true, autocomplete: "adress" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image%><br />
+      <i class="material-icons prefix">account_circle</i>
+      <%= f.text_field :image, autofocus: true, autocomplete: "image" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %>
+
+  <%= render "drivers/shared/links" %>
+</div>
